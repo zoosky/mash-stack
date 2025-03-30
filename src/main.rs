@@ -9,10 +9,17 @@ mod views;
 
 #[tokio::main]
 async fn main() {
+    // Initialize shared state
+    let state = handlers::CounterState::default();
+
     // Define routes
     let app = Router::new()
         .route("/", get(handlers::get_form))
-        .route("/submit", post(handlers::handle_submit));
+        .route("/submit", post(handlers::handle_submit))
+        .route("/counter", get(handlers::get_counter))
+        .route("/counter/increment", post(handlers::increment_counter))
+        .route("/counter/decrement", post(handlers::decrement_counter))
+        .with_state(state);
 
     // Set up the server
     let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
