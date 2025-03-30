@@ -17,10 +17,6 @@ MASH allows for rapid prototyping with simple UI elements while maintaining perf
 
 In this example, we build a basic web application where the user inputs their name, and the server responds with a greeting. The app leverages HTMX to dynamically update the page without needing a full reload, Maud for HTML generation, Axum for request routing, and SQLx for database interaction.
 
-```html
-<button onclick="window.open('https://mash.yree.io', '_blank')">See mash demo 🥔</button>
-```
-
 The example includes:
 
 - `handlers.rs`: Contains the logic for handling HTTP requests. In this example, it renders the form and handles form submissions.
