@@ -1,4 +1,4 @@
-# mash 🥔
+# mash 🥔 evolution
 
 ## **as simple as potatoes**
 
