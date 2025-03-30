@@ -1,0 +1,18 @@
+[package]
+name = "mash-stack"
+version = "0.1.0"
+edition = "2021"
+authors = ["Shantanu Mishra <shantanu@yree.io>, Zoo Sky <zoosky@zoosky.gmail.com>"]
+description = "A minimalist web development stack that combines the power of Maud, Axum, SQLx and HTMX."
+repository = "https://github.com/zoosky/mash-stack"
+license = "MIT"
+readme = "README.md"
+keywords = ["web", "mash", "maud", "axum", "htmx"]
+categories = ["web-programming"]
+
+[dependencies]
+axum = "0.6"
+maud = "0.25"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+sqlx = { version = "0.7", features = ["runtime-tokio", "sqlite"] }
