@@ -1,4 +1,5 @@
 use maud::{html, Markup};
+use super::common::{render_footer, render_styles};
 
 pub fn render_counter_value(count: i32) -> Markup {
     html! {
@@ -85,6 +86,7 @@ pub fn render_counter(count: i32) -> Markup {
                     }
                     "
                 }
+                (render_styles())
             }
             body a="auto" {
                 main class="content" aria-label="Content" {
@@ -108,6 +110,7 @@ pub fn render_counter(count: i32) -> Markup {
                         a href="/" class="back-button" { "← Back to Home" }
                     }
                 }
+                (render_footer())
             }
         }
     }

@@ -1,4 +1,5 @@
 use maud::{html, Markup};
+use super::common::{render_footer, render_styles};
 
 pub fn render_form() -> Markup {
     html! {
@@ -40,21 +41,9 @@ pub fn render_form() -> Markup {
                     .demo-button:active {
                         transform: translateY(0);
                     }
-                    footer {
-                        margin-top: 3rem;
-                        text-align: center;
-                        color: #6c757d;
-                    }
-                    footer a {
-                        color: #007bff;
-                        text-decoration: none;
-                        transition: color 0.2s ease;
-                    }
-                    footer a:hover {
-                        color: #0056b3;
-                    }
                     "
                 }
+                (render_styles())
             }
             body a="auto" {
                 main class="content" aria-label="Content" {
@@ -81,11 +70,7 @@ pub fn render_form() -> Markup {
                         }
                     }
                 }
-                footer {
-                    div class="w" {
-                        p { a href="https://yree.io/mash" { "mash" } " 🥔 :: a " a href="https://yree.io" { "Yree" } " stack ♥" }
-                    }
-                }
+                (render_footer())
             }
         }
     }
