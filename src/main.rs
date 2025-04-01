@@ -19,6 +19,7 @@ async fn main() {
         .route("/counter", get(handlers::get_counter))
         .route("/counter/increment", post(handlers::increment_counter))
         .route("/counter/decrement", post(handlers::decrement_counter))
+        .route("/layout", get(handlers::layout::page))
         .with_state(state);
 
     // Set up the server
